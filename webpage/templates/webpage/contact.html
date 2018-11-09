@@ -1,0 +1,55 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% load webpage_extras %}
+{% block title %} Kontakt {% endblock %}
+{% block content %}
+<!-- end header -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="breadcrumb">
+        <li><a href="{% url 'webpage:start' %}"><i class="fa fa-home" style="color:white"></i></a><i class="icon-angle-right"></i></li>
+        <li class="active">Kontakt</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top:25px; margin-bottom:50px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+
+
+        <div class="col-lg-8 mb-4">
+          <!-- Embedded Google Map -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.4970102118264!2d16.374823150931338!3d48.21630355355204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07a6a3c8fc19%3A0x665ef9d097c41b38!2sHollandstra%C3%9Fe+11%2C+1020+Wien!5e0!3m2!1sde!2sat!4v1520184683758" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="col-lg-4">
+
+          <div class="box-gray">
+            <h2>Kontaktinformationen</h2>
+            <hr width="10%">
+            <p>
+              <b>Dr. Mario Gavranovic</b> <br>
+              OREA Institut für Orientalische und Europäische Archäologie<br>
+              Akademie der Wissenschaften<br>
+              Hollandstrasse 11-13, 1020 Wien, Österreich
+              <br>
+            </p>
+            <p>
+              <abbr title="Email">E</abbr>:
+              <a href="mailto:mario.gavranovic@oeaw.ac.at ">mario.gavranovic@oeaw.ac.at
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

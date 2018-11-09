@@ -1,0 +1,75 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% load webpage_extras %}
+{% block title %} Allgemein {% endblock %}
+{% block content %}
+<!-- end header -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="breadcrumb">
+        <li><a href="{% url 'webpage:start' %}"><i class="fa fa-home" style="color:white"></i></a><i class="icon-angle-right"></i></li>
+        <li><a href="#" style="color:white;">Projekt</a><i class="icon-angle-right"></i></li>
+        <li class="active">Allgemein</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top:25px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+
+        <div class="col-lg-3">
+          <div class="box-gray ">
+            <h5><i class="fa fa-camera fa" style="color: #331165" aria-hidden="true"></i> Gallerie</h5>
+            <ul class="images">
+              <div class="row">
+                <div class="col-lg-12" style="">
+                    <img class="img-responsive gallery-items" originalUrl="{% static 'webpage/img/about01.png' %}" src="{% static 'webpage/img/about01.png' %}" style="padding-top:5px;"  alt="">
+                    <span style="font-size:9px;"> Abbildung 1:</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12" style="">
+                    <img originalUrl="{% static 'webpage/img/about02.png' %}" src="{% static 'webpage/img/about02.png' %}"  style="padding-top:5px;" class="img-responsive gallery-items" alt="">
+                    <span style="font-size:9px;"> Abbildung 2:</span>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12" style="">
+                  <img originalUrl="{% static 'webpage/img/about03_full.png' %}" src="{% static 'webpage/img/about03.png' %}"  style="padding-top:5px;" class="img-responsive gallery-items" alt="">
+                  <span style="font-size:9px;"> Abbildung 3:</span>
+              </div>
+            </div>
+          </ul>
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-9">
+          <div class="box-gray aligncenter">
+            <h2>Thunau am Kamp – Eine befestigte Höhensiedlung</h2>
+            <hr width="10%">
+            <p>
+              Die archäologischen Grabungen in Gars-Thunau haben schon eine lange Tradition und haben zahlreiche Befunde und Funde aus den verschiedensten Epochen zu Tage gefördert. Im Zentrum dieses Digitalisierungsprojektes stehen die Grabungskampagnen von em.o. Univ.-Prof. Dr. phil. Dr.h.c. Herwig Friesinger aus den Jahren 1965-2003. Der großteil der Funde aus diesen Kampagnen datiert in die Urnenfelderkultur (1300-800 v. Chr.) der späten Bronzezeit. Das Zentrum der Fundstelle bildet der sogenannte „Schanzberg“ auf einem Höhenrücken oberhalb der Gemeinde Thunau, 80 km nordwestlich von Wien.
+            </p>
+            <p>
+                Aufgrund der Langjährigen Grabungstätigkeit und den vielen Kleinprojekten und Ausstellungen ist eine große Menge an analogen Daten, wie Fotos, Bilder, Textmaterial für Austellungen, Zeitungsberichte, Grabungsdokumentation, … angefallen. Um diese Menge an analogen Daten mit heutigen Methoden auswerten zu können werden nun die gesamten Dokumente digitalisiert und in einer Datenbank zusammengeführt. Damit soll gewährleistet sein, dass alle Informationen zu dieser Fundstelle, sowohl schon publiziertes wie auch bisher unbearbeitetes Material, an einem Ort abrufbar und damit einer weiteren Bearbeitung zur Verfügung stehen.
+            </p>
+            <br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9773.144767553991!2d15.634944706592998!3d48.58908750087635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDM1JzE0LjQiTiAxNcKwMzgnMjguNyJF!5e1!3m2!1sde!2sat!4v1530041277490" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

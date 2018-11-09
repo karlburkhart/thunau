@@ -1,0 +1,59 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% load webpage_extras %}
+{% block title %} Ansichten {% endblock %}
+{% block content %}
+<!-- end header -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="breadcrumb">
+        <li><a href="{% url 'webpage:start' %}"><i class="fa fa-home" style="color:white"></i></a><i class="icon-angle-right"></i></li>
+        <li><a href="#" style="color:white;">Projekt</a><i class="icon-angle-right"></i></li>
+        <li class="active">Ansichten</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top:25px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="box-gray aligncenter">
+            <h2>Ansichten</h2>
+            <hr width="10%">
+            <br>
+            <ul class="images">
+              <div class="row">
+                <div class="col-lg-4" style="">
+                    <img originalUrl="{% static 'webpage/img/views01.png' %}" src="{% static 'webpage/img/views01.png' %}"  style="padding-top:5px;" class="img-responsive gallery-items" alt="">
+                </div>
+                <div class="col-lg-4" style="">
+                    <img originalUrl="{% static 'webpage/img/views02.png' %}" src="{% static 'webpage/img/views02.png' %}"  style="padding-top:5px;" class="img-responsive gallery-items" alt="">
+                </div>
+                <div class="col-lg-4" style="">
+                    <img originalUrl="{% static 'webpage/img/views03.png' %}" src="{% static 'webpage/img/views03.png' %}"  style="padding-top:5px;" class="img-responsive gallery-items" alt="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4" style="">
+                    <img originalUrl="{% static 'webpage/img/views04.png' %}" src="{% static 'webpage/img/views04.png' %}"  style="padding-top:5px;" class="img-responsive gallery-items" alt="">
+                </div>
+
+              </div>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

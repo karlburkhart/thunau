@@ -1,0 +1,84 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% load webpage_extras %}
+{% block title %} Digitalisierung {% endblock %}
+{% block content %}
+<!-- end header -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="breadcrumb">
+        <li><a href="{% url 'webpage:start' %}"><i class="fa fa-home" style="color:white"></i></a><i class="icon-angle-right"></i></li>
+        <li><a href="#" style="color:white;">Projekt</a><i class="icon-angle-right"></i></li>
+        <li class="active">Digitalisierung</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top:25px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+
+        <div class="col-lg-3">
+          <div class="box-gray ">
+            <h5><i class="fa fa-camera fa" style="color: #331165" aria-hidden="true"></i> Gallerie</h5>
+            <ul class="images">
+              <div class="row">
+                <div class="col-lg-12" style="">
+                    <img originalUrl="{% static 'webpage/img/digit01.png' %}" src="{% static 'webpage/img/digit01.png' %}"  style="padding-top:5px;" class="img-responsive gallery-items" alt="" style="">
+                    <span style="font-size:9px;"> Abbildung 1:</span>
+                </div>
+              </div>
+          </ul>
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-9">
+          <div class="box-gray aligncenter">
+            <h2>Thunau am Kamp – Digitalisierung</h2>
+            <hr width="10%">
+            <p>
+              Im Rahmen der langjährigen Forschungstätigkeit im Raum Gars-Thunau (Bezirk Horn, Niederösterreich) wurde eine immense Menge an Daten aus sehr unterschiedlichen Quellen zusammengetragen. Der Großteil davon stammt aus der Grabungstätigkeit, jedoch gibt es auch eine Vielzahl an historischen Nachrichten, forschungsgeschichtlichen und organisatorischen Daten. Diese sehr unterschiedlich strukturierten Informationen, die allein Grabungstechnisch schon eine gewisse historische Entwicklung aufweisen, zusammenzuführen und für eine Aufarbeitung zugänglich zu machen, ist eines der Hauptziele dieses Projektes.
+            </p>
+            <p>
+              Als Case-Study werden in diesem Projekt vorrangig die Grabungen der urnenfelderzeitlichen Befunde von Herwig Friesinger aus den Jahren 1965–2003 digital erfasst. Zu diesem Zweck werden alle analog vorliegenden Daten – wie Grabungsdokumentation, Genehmigungen und behördliche Dokumente, archäologische Berichte, aber auch Zeitungsartikel, Korrespondenzen, Plakate und Materialien zur Öffentlichkeitsarbeit – digitalisiert und in einer Datenbank erfasst. In Zusammenarbeit mit dem ÖAW-ACDH und mit Unterstützung durch das Land Niederösterreich werden die gesamten Daten dann in einem Langzeit-Repositorium der ÖAW gespeichert und stehen somit der wissenschaftlichen Auswertung zur Verfügung.
+            </p>
+            <p>
+              Bislang wurden auf diese Weise über 1200 Datensätze erfasst und auch die Ergebnisse der vorhergehenden Digitalisierungsprojekte, wie zum Beispiel die Datenbank der Kleinfunde aus aus Gars-Thunau, integriert.
+            </p>
+            <p>
+              Um die langjährige Forschungstätigkeit in Gars-Thunau auch im Bewusstsein der Öffentlichkeit zu halten, soll in Zusammenarbeit mit dem ÖAW-ACDH eine Homepage erstellt werden, auf der die Informationen zu den Grabungskampagnen, eine Übersicht der Fachpublikationen und die Angaben zum aktuellen Digitalisierungsprojekt zu finden sind.
+            </p>
+            <p>
+              <b>Ziele dieses Projektes sind:</b>
+            </p>
+            <p >
+              <ul style="text-align:left;">
+                <li>
+                  Langzeitsicherung sämtlicher Grabungsbezogenen Daten, um diese der wissenschaftlichen Aufarbeitung zur Verfügung  stellen zu können.
+                </li>
+                <li>
+                  Erstellen und Erproben eines Datenbankschemas zur Erfassung von langjährigen Altgrabungsprojekten.
+                </li>
+                <li>
+                  Erstellen eines Webauftrittes des Digitalisierungsprojektes mit den Informationen zur Grabungstätigkeiten in Thunau am Kamp mit dem Schwerpunkt auf die Urnenfelderzeit.
+                </li>
+              </ul>
+            </p>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% load webpage_extras %}
+{% block title %} Kleinfunde DB{% endblock %}
+{% block content %}
+<!-- end header -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="breadcrumb">
+        <li><a href="{% url 'webpage:start' %}"><i class="fa fa-home" style="color:white"></i></a><i class="icon-angle-right"></i></li>
+        <li class="active">Kleinfunde DB</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top:25px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="box-gray">
+            <h2>Kleinfundedatenbank</h2>
+            <hr width="10%">
+            <br>
+            <p>Das Projekt „Kleinfundedatenbank“ stellt gewissermassen den Beginn der Digitalisierungsarbeit des Spätbronzezeitlichen Fundmateriales der Grabungen in Thunau dar. Das Scanprojekt wurde von Dr. Michaela Lochner in Auftrag gegeben und von Melanie Zeller von 2012-2015 durchgeführt,  wobei über 74500 Datensätze erstellt wurden. . Ziel des Projektes war eine übersichtliche Aufbereitung der Funde aus allen Grabungskampagnen in Thunau am Kamp, damit sie für die Beantwortung zukünftiger Fragestellungen herangezogen werden können. Der Fokus lag dabei auf Funden aus der Spätbronzezeit.
+            </p>
+            <p>
+              Dazu wurden die Zeichnungen der Funde – die bis dahin nur in analoger Form vorlagen – eingescannt und mit dem entsprechenden Datensatz in einer Access-Datenbank verlinkt. Die Datenbank „Fundprotokoll“ bestand bereits, war jedoch nur spärlich ausgefüllt. Im Zuge des Projektes wurde die Datenbank um die Attribute Datierung, Grundform, Material, Anmerkung und ScanPfad erweitert. Die Zeichnungen  wurden anhand ihrer Fundnummern einem Datensatz in der Tabelle zugeordnet, die oben erwähnten Attribute bestimmt und die eingescannte Bleistift- oder Tusche-Zeichnung wurde durch einen Hyperlink mit dem zugehörigen Datensatz verlinkt. Auf diese Weise wurden Funde aller Materialgattungen aus verschiedenen Fundstellen in Thunau am Kamp sowie aus dem Gräberfeld Inzersdorf aufbereitet. Auch Artefakte aus den Museen Horn, Eggenburg, Gars, Traismauer und der Prähistorischen Abteilung des Naturhistorischen Museums in Wien wurden erfasst.
+            </p>
+            <p>
+              Die Tabelle FUNDPRO enthält den Großteil der Funde während für die Artefakte aus dem Gräberfeld Inzersdorf eine eigene Tabelle angelegt wurde. Um die Fundnummern als Primärschlüssel verwenden zu können wurden für die Objekte aus dem Museum Horn, sowie für jene der Fundstelle Thunau  Goldberggasse eigene Tabellen angelegt.
+            </p>
+            <p>
+              Die eingescannten Zeichnungen wurden als TIF-Dateien auf der Festplatte „PRÄHIST_Thunau_Scan“ abgespeichert. Sie sind in hierarchischer Reihenfolge nach Materialgruppen und Museen bzw. Fundstellen gegliedert.  Die Verzeichnisstruktur entwickelte sich erst im Laufe des Projektes, was sich als unvorteilhaft erwies. Bei zukünftigen Projekten sollte gezielt darauf geachtet werden, zu Beginn einen Überblick über die Daten zu erhalten um eine geeignete Datenstruktur wählen zu können.
+            </p>
+            <p>
+              Die erweiterte Datenbank ermöglicht nun einen schnellen Zugriff auf die Funddaten und –zeichnungen. Abfragen bezüglich Material, Form, Datierung und Fundort ermöglichen beispielsweise eine schnelle und effektive Kartierung der einzelnen Material- oder Fundgattungen.
+            </p>
+            <p>
+               Unterteilt ist die Datenbank nach folgenden Fundkategorien:
+            </p>
+            <ul>
+              <li>Buntmetall</li>
+              <li>Eisen</li>
+              <li>Keramik</li>
+              <li>Knochen</li>
+              <li>Stein</li>
+            </ul>
+            <p>Für einen vollständigen Zugan zur Datenbank kann unter folgendem Link um eine Zugangsberechtigung angesucht werden:</p>
+            <i>Text: Michael Konrad, Melanie Zeller
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

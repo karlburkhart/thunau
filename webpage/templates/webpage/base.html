@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load webpage_extras %}
+{% load browsing_extras %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %} {% projects_metadata 'title' %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block metaDescription %}
+        <meta name="description" content="{{ metadata.description }}">
+        <meta name="author" content="{{ metadata.author }}">
+    {% endblock %}
+    <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'webpage/img/favicon/apple-touch-icon.png' %}"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'webpage/img/favicon/favicon-32x32.png' %}"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'webpage/img/favicon/favicon-16x16.png' %}"/>
+        <link rel="manifest" href="{% static 'webpage/img/favicon/manifest.json' %}"/>
+        <link rel="mask-icon" href="{% static 'webpage/img/favicon/safari-pinned-tab.svg' %}" color="#00aba9"/>
+        <meta name="theme-color" content="#ffffff"/>
+    <!--favicons end -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'webpage/libraries/bootstrap337/css/bootstrap.min.css' %}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'webpage/css/default.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'webpage/libraries/imageviewer/dist/viewer.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'webpage/css/style1.css' %}" />
+    <!--scroll to top CSS -->
+    <link rel="stylesheet" href="{% static 'webpage/libraries/scroll-to-top/css/ap-scroll-top.min.css'%}" />
+    <!-- LESS -->
+    <script type="text/javascript" src="{% static 'webpage/libraries/less/less.min.js' %}"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'webpage/libraries/jquery/jquery.js' %}"></script>
+    <!-- Popper -->
+    <script type="text/javascript" src="{% static 'webpage/libraries/popper/popper.min.js' %}"></script>
+    <!--scroll to top -->
+    <script src="{% static 'webpage/libraries/scroll-to-top/js/ap-scroll-top.min.js'%}"></script>
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {
+            "message":"This website uses cookies to ensure you get the best experience on our website",
+            "dismiss":"Got it!",
+            "learnMore":"More info",
+            "link":"{% url 'webpage:staticpage' template='imprint' %}",
+            "theme":"dark-bottom"};
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+    <!-- End Cookie Consent plugin -->
+    <!-- cool-share plugin http://tutorialzine.com/2014/08/cool-share-jquery-plugin/ -->
+    <link rel="stylesheet" href="{% static 'webpage/libraries/cool-share/plugin.css' %}" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+
+    <script src="{% static 'webpage/libraries/cool-share/plugin.js' %}"></script>
+    <!-- End fo cool-share -->
+    <!-- Matomo -->
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="{% projects_metadata 'matomo_url' %}";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '{% projects_metadata "matomo_id" %}']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+    <!-- End Matomo Code -->
+    {% block scriptHeader %}
+    {% endblock %}
+</head>
+<body role="">
+  <header>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'webpage:start' %}"><span>D</span>okuplattform <span>T</span>hunau</a>
+        </div>
+        <div class="navbar-collapse collapse ">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'webpage:start' %}">Startseite</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Projekt <i class="fa fa-sort-down" aria-hidden="true"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'webpage:staticpage' template='about' %}">Allgemein</a></li>
+                <li><a href="{% url 'webpage:staticpage' template='excavation' %}">Grabung</a></li>
+                <li><a href="{% url 'webpage:staticpage' template='digitisation' %}">Digitalisierung</a></li>
+                <li><a href="{% url 'webpage:staticpage' template='views' %}">Ansichten</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'webpage:staticpage' template='database' %}">Kleinfunde DB</a></li>
+            <li><a href="{% url 'webpage:staticpage' template='literature' %}">Literatur</a></li>
+            <li><a href="{% url 'webpage:staticpage' template='contact' %}">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<section class="main-content">
+    <div id="content">
+      <!--   <div class="alert alert-warning alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Warning!</strong> Draft Version.
+        </div> -->
+        {% block content %}{% endblock %}
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-4">
+                <a href="https://www.oeaw.ac.at/acdh/" class="navlink" target="_blank">
+                    <img src="{% static 'webpage/img/acdh_logo_02.png' %}" id="acdh-logo" alt="ACDH" title="Austrian Centre for Digital Humanities"/>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="https://www.orea.oeaw.ac.at/" class="navlink" target="_blank">
+                    <img src="{% static 'webpage/img/OREA_white.png' %}" id="orea-logo" alt="{{ metadata.github }}" title="Github source code"/>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://www.mamuz.at/de/startseite" class="navlink" target="_blank">
+                    <img src="{% static 'webpage/img/mamuz_logo.png' %}" id="mamuz-logo" alt="{{ metadata.github }}" title="Github source code"/>
+                </a>
+            </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-sm-4">
+          </div>
+          <div class="col-sm-4">
+            <a href="{% url 'webpage:staticpage' template='terms' %}">Terms of Use</a><br>
+            <a href="{% url 'webpage:staticpage' template='imprint' %}">Imprint</a>
+          </div>
+          <div class="col-sm-4">
+          </div>
+        </div>
+      </div>
+  </footer>
+{% block scripts %}
+<script type="text/javascript" src="{% static 'webpage/libraries/bootstrap337/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/bootstrap400/js/bootstrap-tab.js' %}"></script>
+<script src="{% static 'webpage/libraries/imageviewer/dist/viewer.js' %}"></script>
+
+
+<!--bootstrap-select must be after bootstrap js-->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css" />
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<!-- cool share -->
+<script type="text/javascript">
+    $(function (){
+        var options = {
+            twitter: {
+            text: '',
+            via: ''
+        },
+        facebook : true,
+        googlePlus : true
+        };
+        $('.socialShare').shareButtons(options);
+    });
+</script>
+<!-- scroll-up-bottom -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.apScrollTop({'onInit': function(evt) {console.log('apScrollTop: init');}});
+    });
+</script>
+{% endblock %}
+{% block scripts2 %}
+{% endblock scripts2 %}
+<script>
+$(function () {
+    var options = {
+    url: 'originalUrl'};
+        $('.images').viewer(options);
+});
+
+</script>
+<noscript>
+    <img src="//piwik.apollo.arz.oeaw.ac.at/piwik.php?idsite=48" style="border:0;" alt=""/>
+</noscript>
+</body>
+</html>
